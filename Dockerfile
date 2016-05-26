@@ -19,6 +19,12 @@ COPY advanced.config /etc/riak/
 # install riak-cs
 
 RUN chmod 777 /var/lib/riak/
+RUN chmod 777 /var/log/riak/
+RUN chmod 777 /var/log/riak-cs/
+RUN chmod 777 /var/log/stanchion/
 VOLUME /var/lib/riak/
+VOLUME /var/log/riak/
+VOLUME /var/log/riak-cs/
+VOLUME /var/log/stanchion/
 CMD ["sh","-c","/sleep10.sh"]
 
